@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 import Home from "./pages/Home";
+import Collection from "./pages/Collection";
 import MediaDetail from "./pages/MediaDetail";
 import { StrictMode } from "react";
 
@@ -12,7 +13,8 @@ const router = createBrowserRouter([{
     element: <App />,
     children: [
         {path:'' , element: <Home />},
-        { path:'media/:mediaID', element: <MediaDetail />}
+        { path:'media/:mediaID', element: <MediaDetail />},
+        { path: 'collection', element: <Collection /> }
     ]
 }])
 
