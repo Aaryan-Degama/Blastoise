@@ -4,18 +4,18 @@ import App from "./App";
 import "./index.css";
 import Home from "./pages/Home";
 import MediaDetail from "./pages/MediaDetail";
+import TierList from "./pages/TierList"; 
 import { StrictMode } from "react";
 
-
 const router = createBrowserRouter([{
-    path:"/",
+    path: "/",
     element: <App />,
     children: [
-        {path:'' , element: <Home />},
-        { path:'media/:mediaID', element: <MediaDetail />}
+        { path: '', element: <Home /> },
+        { path: 'media/:mediaID', element: <MediaDetail /> },
+        { path: 'tierlist', element: <TierList /> }, // 👈 add this
     ]
 }])
-
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
