@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-// import Footer from "./components/Footer"; 
+import Footer from "./components/Footer"; 
 
 
 const App = () => {
@@ -21,13 +21,19 @@ const App = () => {
         <div className="flex justify-between items-center px-6 py-4 border-b border-[#2A2A2A]">
           <h1 
           className="text-lg font-semibold">Main</h1>
-
-          
         </div>
 
-        {/* Content - Added overflow-y-auto so ONLY this part scrolls */}
-        <div className="flex-1 p-6 text-gray-400 overflow-y-auto">
-          <Home />
+        {/* Scrollable Area - Now contains both Home and Footer */}
+        <div className="flex-1 overflow-y-auto flex flex-col">
+          
+          {/* Page Content */}
+          <div className="p-6 text-gray-400 flex-1">
+            <Home />
+          </div>
+          
+          {/* Footer - Sits at the bottom of the scrollable area */}
+          <Footer />
+          
         </div>
         
       </div>
