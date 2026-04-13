@@ -7,7 +7,6 @@ import {
   Search,
   Settings,
 } from "lucide-react";
-// Make sure this path matches where you stored the image
 import blastoiseLogo from "../assets/blastoise_logo.png"; 
 
 const Navbar = () => {
@@ -33,9 +32,7 @@ const Navbar = () => {
         />
       </div>
 
-      <div className="flex flex-col gap-8 w-full"
-      style={{
-      }}>
+      <div className="flex flex-col gap-8 w-full">
         {menu.map((item) => (
           <div
             key={item.name}

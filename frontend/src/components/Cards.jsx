@@ -1,6 +1,11 @@
 import React from 'react';
 
-function Cards({ title, poster, rating, year }) {
+function Cards({ 
+    title, 
+    poster, 
+    rating, 
+    year 
+}) {
   return (
     <div className="bg-[#121212] rounded-xl overflow-hidden border border-[#2A2A2A] flex flex-col transition-transform hover:-translate-y-1 hover:border-[#1480d9] duration-300 group cursor-pointer">
       

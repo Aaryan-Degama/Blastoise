@@ -6,7 +6,6 @@ const Home = () => {
   const movies = DB();
 
   return (
-    // This grid layout restricts the cards to specific columns so they don't stretch!
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
       {movies.map((movie) => (
         <Cards 

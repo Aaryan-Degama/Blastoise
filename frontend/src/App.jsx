@@ -11,11 +11,7 @@ const App = () => {
       <Navbar />
 
       {/* Main Section */}
-      <div className="flex flex-col flex-1 overflow-hidden text-white"
-      style={{
-        paddingLeft: '20px',
-        color: 'white'
-      }}>
+      <div className="flex flex-col flex-1 py-[10px] overflow-hidden text-white">
         
         {/* Top Bar */}
         <div className="flex justify-between items-center px-6 py-4 border-b border-[#2A2A2A]">
@@ -23,15 +19,14 @@ const App = () => {
           className="text-lg font-semibold">Main</h1>
         </div>
 
-        {/* Scrollable Area - Now contains both Home and Footer */}
         <div className="flex-1 overflow-y-auto flex flex-col">
           
-          {/* Page Content */}
+          {/* The Home page for now afterwards will implement routers for page change */}
           <div className="p-6 text-gray-400 flex-1">
             <Home />
           </div>
           
-          {/* Footer - Sits at the bottom of the scrollable area */}
+          {/* Footer */}
           <Footer />
           
         </div>
