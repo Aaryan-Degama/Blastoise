@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer"; 
-import { Outlet, useLocation } from "react-router-dom"; // 👈 add useLocation
+import { Outlet, useLocation } from "react-router-dom";
 
 const pageTitles = {
   "/": "Main",
@@ -9,8 +9,8 @@ const pageTitles = {
 };
 
 const App = () => {
-  const location = useLocation(); // 👈 get current path
-  const title = pageTitles[location.pathname] || "Main"; // 👈 look up title
+  const location = useLocation(); 
+  const title = pageTitles[location.pathname] || "Main"; 
 
   return (
     <div className="flex bg-black text-white h-screen w-full">
@@ -23,7 +23,7 @@ const App = () => {
         
         {/* Top Bar */}
         <div className="flex justify-between items-center px-6 py-4 border-b border-[#2A2A2A]">
-          <h1 className="text-lg font-semibold">{title}</h1> {/* 👈 dynamic */}
+          <h1 className="text-lg font-semibold">{title}</h1> 
         </div>
 
         <div className="flex-1 overflow-y-auto flex flex-col">

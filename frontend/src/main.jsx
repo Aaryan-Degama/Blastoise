@@ -13,7 +13,7 @@ const router = createBrowserRouter([{
     children: [
         { path: '', element: <Home /> },
         { path: 'media/:mediaID', element: <MediaDetail /> },
-        { path: 'tierlist', element: <TierList /> }, // 👈 add this
+        { path: 'tierlist', element: <TierList /> }, 
     ]
 }])
 

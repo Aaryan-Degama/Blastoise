@@ -12,12 +12,19 @@ const DEFAULT_TIERS = [
 const TierList = () => {
   const movies = DB();
 
+  // It is to store Which movie are in a particular tier
   const [tiers, setTiers] = useState(
     DEFAULT_TIERS.map((t) => ({ ...t, movies: [] }))
   );
-  const [unranked, setUnranked] = useState(movies);
-  const [dragging, setDragging] = useState(null); // { movie, from: 'unranked' | tierLabel }
 
+
+  const [unranked, setUnranked] = useState(movies);  // It Stores all the Unranked Media
+
+  // It tracks which movie is being dragged
+  // { movie, from: 'unranked' | tierLabel }
+  const [dragging, setDragging] = useState(null); 
+
+  
   const handleDragStart = (movie, from) => {
     setDragging({ movie, from });
   };
