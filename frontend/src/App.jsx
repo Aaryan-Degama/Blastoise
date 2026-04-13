@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
 import Footer from "./components/Footer"; 
+import { Outlet } from "react-router-dom";
 
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
           
           {/* The Home page for now afterwards will implement routers for page change */}
           <div className="p-6 text-gray-400 flex-1">
-            <Home />
+            <Outlet />
           </div>
           
           {/* Footer */}

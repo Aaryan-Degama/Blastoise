@@ -8,17 +8,18 @@ import {
   Settings,
 } from "lucide-react";
 import blastoiseLogo from "../assets/blastoise_logo.png"; 
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [active, setActive] = useState("Main");
 
-  const menu = [
-    { name: "Main", icon: <Home size={22} /> },
-    { name: "Collections", icon: <Layers size={22} /> },
-    { name: "Tier Lists", icon: <BarChart2 size={22} /> },
-    { name: "Wishlist", icon: <Bookmark size={22} /> },
-    { name: "Search", icon: <Search size={22} /> },
-    { name: "Settings", icon: <Settings size={22} /> },
+ const menu = [
+    { name: "Main", icon: <Home size={22} />, to: '' },
+    { name: "Collections", icon: <Layers size={22} />, to: 'media/1' },
+    { name: "Tier Lists", icon: <BarChart2 size={22} />, to: 'media/2' },
+    { name: "Wishlist", icon: <Bookmark size={22} />, to: 'media/3' },
+    { name: "Search", icon: <Search size={22} />, to: 'media/4' },
+    { name: "Settings", icon: <Settings size={22} />, to: 'media/5' }, // For testing
   ];
 
   return (
@@ -34,11 +35,11 @@ const Navbar = () => {
 
       <div className="flex flex-col gap-8 w-full">
         {menu.map((item) => (
-          <div
+          <Link
             key={item.name}
+            to={item.to} // Use Link for navigation
             onClick={() => setActive(item.name)}
             className="flex flex-col items-center cursor-pointer group"
-       
           >
             {/* Icon */}
             <div
@@ -61,7 +62,7 @@ const Navbar = () => {
             >
               {item.name}
             </span>
-          </div>
+          </Link>
         ))}
       </div>
       
