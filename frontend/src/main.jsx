@@ -4,6 +4,7 @@ import App from "./App";
 import "./index.css";
 import Home from "./pages/Home";
 import Collection from "./pages/Collection";
+import SearchPage from "./pages/SearchPage";
 import MediaDetail from "./pages/MediaDetail";
 import { StrictMode } from "react";
 
@@ -14,7 +15,8 @@ const router = createBrowserRouter([{
     children: [
         {path:'' , element: <Home />},
         { path:'media/:mediaID', element: <MediaDetail />},
-        { path: 'collection', element: <Collection /> }
+        { path: 'collection', element: <Collection /> },
+        { path: "search", element: <SearchPage /> }
     ]
 }])
 

@@ -16,10 +16,10 @@ const Navbar = () => {
  const menu = [
     { name: "Main", icon: <Home size={22} />, to: '' },
     { name: "Collections", icon: <Layers size={22} />, to: 'collection' },
-    { name: "Tier Lists", icon: <BarChart2 size={22} />, to: 'media/2' },
-    { name: "Wishlist", icon: <Bookmark size={22} />, to: 'media/3' },
-    { name: "Search", icon: <Search size={22} />, to: 'media/4' },
-    { name: "Settings", icon: <Settings size={22} />, to: 'media/5' }, // For testing
+    { name: "Tier Lists", icon: <BarChart2 size={22} />, to: 'media/1002' },
+    { name: "Wishlist", icon: <Bookmark size={22} />, to: 'media/1003' },
+    { name: "Search", icon: <Search size={22} />, to: 'search' },
+    { name: "Settings", icon: <Settings size={22} />, to: 'media/1005' }, // For testing
   ];
 
   return (
