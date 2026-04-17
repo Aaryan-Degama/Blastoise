@@ -3,6 +3,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 import Home from "./pages/Home";
+import Collection from "./pages/Collection";
+import SearchPage from "./pages/SearchPage";
 import MediaDetail from "./pages/MediaDetail";
 import Members from "./pages/Footer/Members";
 import Page67 from "./pages/Footer/Page67";
@@ -16,11 +18,13 @@ const router = createBrowserRouter([{
     element: <App />,
     children: [
         {path:'' , element: <Home />},
-        { path:'media/:id', element: <MediaDetail />},
-        { path: 'members', element: <Members /> },
-        { path: 'page-67', element: <Page67 /> },
-        { path: 'terms', element: <Terms /> },
-        { path: 'contact', element: <Contact /> }
+{ path: "media/:id", element: <MediaDetail /> },
+{ path: "collection", element: <Collection /> },
+{ path: "search", element: <SearchPage /> },
+{ path: "members", element: <Members /> },
+{ path: "page-67", element: <Page67 /> },
+{ path: "terms", element: <Terms /> },
+{ path: "contact", element: <Contact /> },
     ]
 }])
 
