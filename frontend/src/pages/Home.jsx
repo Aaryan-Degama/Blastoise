@@ -20,10 +20,9 @@ const Home = () => {
         <Link key={movie.id} to={`/media/${movie.id}`}> 
           <Cards 
             title={movie.title}
-            poster={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-            rating={movie.vote_average}
-            releaseDate={movie.release_date}
-            overview={movie.overview}
+            poster={movie.poster}
+            rating={movie.rating}
+            releaseDate={movie.year}
           />
         </Link>
       ))}
