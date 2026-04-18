@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom";
 import DB from "../db/db";
 
 function MediaDetail() {
-  const { mediaID } = useParams();
+  const { id } = useParams();
   const movies = DB();
 
-  const media = movies.find((item) => item.id === Number(mediaID));
+  const media = movies.find((item) => item.id === Number(id));
 
   const [selectedFolder, setSelectedFolder] = useState("collection");
   const [savedFolders, setSavedFolders] = useState([]);
@@ -18,32 +18,32 @@ function MediaDetail() {
     const storedfavorites =
       JSON.parse(localStorage.getItem("favorites")) || [];
 
-    const mediaFolders = storedFolders[mediaID] || [];
+    const mediaFolders = storedFolders[id] || [];
 
     setSavedFolders(mediaFolders);
     setfavorites(storedfavorites);
-  }, [mediaID]);
+  }, [id]);
 
   const handleAddToFolder = () => {
     const storedFolders =
       JSON.parse(localStorage.getItem("mediaFolders")) || {};
 
-    const currentFolders = storedFolders[mediaID] || [];
+    const currentFolders = storedFolders[id] || [];
 
     if (!currentFolders.includes(selectedFolder)) {
-      storedFolders[mediaID] = [...currentFolders, selectedFolder];
+      storedFolders[id] = [...currentFolders, selectedFolder];
       localStorage.setItem("mediaFolders", JSON.stringify(storedFolders));
-      setSavedFolders(storedFolders[mediaID]);
+      setSavedFolders(storedFolders[id]);
     }
   };
 
   const toggleFavorite = () => {
     let updatedfavorites = [];
 
-    if (favorites.includes(Number(mediaID))) {
-      updatedfavorites = favorites.filter((id) => id !== Number(mediaID));
+    if (favorites.includes(Number(id))) {
+      updatedfavorites = favorites.filter((favId) => favId !== Number(id));
     } else {
-      updatedfavorites = [...favorites, Number(mediaID)];
+      updatedfavorites = [...favorites, Number(id)];
     }
 
     setfavorites(updatedfavorites);
@@ -115,7 +115,7 @@ function MediaDetail() {
                 onClick={toggleFavorite}
                 className="px-4 py-3 rounded-lg bg-[#111] border border-gray-700 hover:border-blue-500 transition"
               >
-                {favorites.includes(Number(mediaID))
+                {favorites.includes(Number(id))
                   ? "Remove from favorites"
                   : "Add to favorites"}
               </button>
